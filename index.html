@@ -17,7 +17,7 @@
     <link rel="canonical" href="https://finbred.io/" />
 
     <!-- Theme / Chrome -->
-    <meta name="theme-color" content="#e76f51" />
+    <meta name="theme-color" content="#567158" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -55,6 +55,56 @@
             "priceCurrency": "AUD"
         }
     }
+    </script>
+
+    <!-- FAQ Structured Data (expandable dropdowns in Google results) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is Finbred?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Finbred is a free browser-based roguelike deck-builder. You draft fish into your deck, draw them into a tank each day, manage ammonia pollution, and try to collect 3 Crown Fish before Day 30."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do you win in Finbred?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "You win by having 3 Crown Fish alive in your tank on the same day before Day 30. Crown Fish cost 30-40 Eggs each, so you need to build an economy engine that scales fast enough to afford them."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is Finbred free to play?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, Finbred is completely free. It runs in any modern browser with no download, no account, and no microtransactions."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What game modes does Finbred have?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Finbred includes multiple game modes: Rogue-Sea (full roguelike), Random-Draft (randomized pool), Seeded-Swim (reproducible runs via seed codes), Daily-Dive (shared daily seed), and Challenge Scenarios with unique rule modifiers."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I play Finbred on mobile?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, Finbred is fully responsive and works on mobile browsers. It supports touch input and can be added to your home screen as a progressive web app."
+                    }
+                }
+            ]
+        }
     </script>
 
     <!-- Bootstrap 5 -->
