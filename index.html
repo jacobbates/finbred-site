@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finbred | Roguelike Deck-Builder with fish</title>
+    <meta name="description" content="Finbred is a browser-based roguelite deck-builder. Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://finbred.io/" />
+
+    <!-- Theme / Chrome -->
+    <meta name="theme-color" content="#e76f51" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://finbred.io/" />
+    <meta property="og:title" content="Finbred - Roguelite Deck-Builder in a Fish Tank" />
+    <meta property="og:description" content="Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30 or they all die" />
+    <meta property="og:image" content="https://finbred.io/icons/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Finbred - Roguelite Deck-Builder in a Fish Tank" />
+    <meta name="twitter:description" content="Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30 or they all die." />
+    <meta name="twitter:image" content="https://finbred.io/icons/og-image.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Finbred",
+        "url": "https://finbred.fish",
+        "description": "A browser-based roguelite deck-builder. Draft fish, build combos, and survive ammonia crashes to collect 3 Crown Fish before Day 30.",
+        "genre": ["Roguelite", "Deck-builder", "Strategy"],
+        "gamePlatform": "Web browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "image": "https://finbred.io/icons/og-image.png",
+        "author": {
+            "@type": "Person",
+            "name": "Jacob Bates"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "AUD"
+        }
+    }
+    </script>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Site Specific CSS -->
+    <link rel="stylesheet" href="css/site.min.css" />
+</head>
+<body class="bg-paper">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-retro px-3 py-2 sticky-top border-bottom-ink">
+        <div class="container">
+            <a class="navbar-brand mb-0 h4 fw-bold text-white uppercase-tracking d-flex align-items-center gap-2" href="#">
+                <iconify-icon icon="tabler:fish-bone" width="24" height="24"></iconify-icon>
+                Finbred
+            </a>
+            <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav align-items-md-center gap-3 gap-md-4 mt-3 mt-md-0 pb-3 pb-md-0">
+                    <li class="nav-item">
+                        <a href="#mechanics" class="nav-link text-white fw-bold uppercase-tracking">Mechanics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#synergies" class="nav-link text-white fw-bold uppercase-tracking">Synergies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#roster" class="nav-link text-white fw-bold uppercase-tracking">Roster</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#changelog" class="nav-link text-white fw-bold uppercase-tracking">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://finbred.fish" class="btn btn-retro-primary text-white text-uppercase fw-bold py-1 px-3">Start a Run</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Aquarium Hero -->
+    <section id="hero-aquarium">
+        <div class="crt-overlay"></div>
+        <!-- Background Layer -->
+        <div class="tank-layer-sand"></div>
+
+        <!-- Fish Animations -->
+        <!-- Goldfish: Slow sweep right -->
+        <div class="fish-sprite fish-goldfish">
+            <img src="sprites/f_goldfish.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <!-- Guppy: Fast sweep left -->
+        <div class="fish-sprite fish-guppy">
+            <img src="sprites/f_guppy.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <!-- Crab: Scuttling on bottom -->
+        <div class="fish-sprite fish-crab">
+            <img src="sprites/f_crab.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="hero-content d-flex flex-column align-items-center justify-content-center h-100">
+            <h1 class="display-3 fw-bold text-white mb-2 uppercase-tracking" style="letter-spacing: 2px;">FINBRED</h1>
+            <p class="h4 text-paper mb-3 font-monospace" style="max-width: 640px; line-height: 1.5;">A Roguelite Deck-Builder with fish.</p>
+            <p class="text-paper mb-4 font-monospace" style="max-width: 580px; line-height: 1.5; opacity: 0.85;">Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30 or they all die.</p>
+            <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg shadow-hard mt-1 btn-cta-pulse" id="hero-cta">Start a Run &gt;</a>
+        </div>
+    </section>
+
+    <!-- Mechanical Pillars -->
+    <section class="container section-pad" id="mechanics">
+        <div class="text-center mb-4">
+            <h2 class="display-5 fw-bold uppercase-tracking text-ink">The Core Loop</h2>
+            <p class="text-secondary font-monospace">Every run is a 30-day economy puzzle.</p>
+        </div>
+        <div class="row g-4 text-center">
+            <!-- Pillar 1: Draft -->
+            <div class="col-md-4">
+                <div class="card-retro feature-card">
+                    <div class="feature-icon text-celadon"><iconify-icon icon="fa6-solid:layer-group" width="28" height="28"></iconify-icon></div>
+                    <h3 class="fw-bold uppercase-tracking">Draft</h3>
+                    <p class="text-secondary">Every fish you buy is a card added to your permanent Ocean deck. Targeted drafting and deck-thinning are critical -- a bloated deck dilutes your best draws.</p>
+                </div>
+            </div>
+            <!-- Pillar 2: Survive -->
+            <div class="col-md-4">
+                <div class="card-retro feature-card">
+                    <div class="feature-icon text-danger"><iconify-icon icon="fa6-solid:biohazard" width="28" height="28"></iconify-icon></div>
+                    <h3 class="fw-bold uppercase-tracking">Survive</h3>
+                    <p class="text-secondary">Ammonia is your run-killer. High-yield fish pollute the water. Hit 3.0 ammonia and the tank crashes -- zero income that day. Pure push-your-luck tension every draw.</p>
+                </div>
+            </div>
+            <!-- Pillar 3: Scale -->
+            <div class="col-md-4">
+                <div class="card-retro feature-card">
+                    <div class="feature-icon text-orange"><iconify-icon icon="fa6-solid:chart-line" width="28" height="28"></iconify-icon></div>
+                    <h3 class="fw-bold uppercase-tracking">Scale</h3>
+                    <p class="text-secondary">Eggs buy fish. Shells expand your tank. Crown Fish cost 30-40 Eggs each -- you need to build an economy engine that scales fast enough to afford three before Day 30.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How a Run Works -->
+    <section id="guide" class="bg-retro-light section-pad border-top-ink border-bottom-ink">
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="text-center mb-4">
+                    <h2 class="display-5 fw-bold uppercase-tracking text-ink">How a Run Works</h2>
+                    <p class="text-secondary font-monospace">Three phases. Every single day. For 30 days.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card-retro p-3 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <div class="step-number">1</div>
+                                <h4 class="fw-bold uppercase-tracking mb-0">Draw</h4>
+                            </div>
+                            <p class="text-secondary small mb-0">Draw fish one-by-one from your shuffled Ocean deck into the tank. Every draw is a gamble -- you might pull a Shell-generating Crab, or an ammonia-producing Guppy that pushes you closer to a crash.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-retro p-3 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <div class="step-number">2</div>
+                                <h4 class="fw-bold uppercase-tracking mb-0">Score</h4>
+                            </div>
+                            <p class="text-secondary small mb-0">End the day to trigger scoring. Every fish in the tank produces <iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> Eggs and <iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> Shells plus any trait bonuses. Crashed tanks earn nothing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-retro p-3 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <div class="step-number">3</div>
+                                <h4 class="fw-bold uppercase-tracking mb-0">Shop</h4>
+                            </div>
+                            <p class="text-secondary small mb-0">The Hatchery opens. Spend Eggs to draft new fish into your permanent deck. Spend Shells to expand tank capacity. Every purchase shapes the rest of your run.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Synergy Showcase: The Corpse Economy -->
+    <section id="synergies" class="synergy-section section-pad">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="text-center mb-2">
+                <span class="combo-label mb-3 d-inline-block">Chain Combos!</span>
+                <h2 class="display-5 fw-bold uppercase-tracking text-paper">The Corpse Economy</h2>
+                <p class="font-monospace mb-4" style="color: var(--c-sage); max-width: 600px; margin: 0 auto;">Some of the best synergies in Finbred are built on death. Here is one of many "broken" combos waiting to be discovered.</p>
+            </div>
+            <div class="row align-items-center justify-content-center g-3">
+                <div class="col-md-3 col-sm-8">
+                    <div class="synergy-card">
+                        <div class="fish-portrait"><img src="sprites/f_flatfish.svg" alt="Flatfish" /></div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Flatfish</h5>
+                        <p class="font-monospace small mb-1" style="color: var(--c-sage);">Eat Random</p>
+                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">Devours a random fish on entry, leaving behind a corpse. +5 Shells from the kill.</p>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-md-flex">
+                    <div class="synergy-arrow"><iconify-icon icon="fa6-solid:arrow-right"></iconify-icon></div>
+                </div>
+                <div class="col-12 d-flex d-md-none justify-content-center">
+                    <div class="synergy-arrow synergy-arrow-mobile"><iconify-icon icon="fa6-solid:arrow-down"></iconify-icon></div>
+                </div>
+                <div class="col-md-3 col-sm-8">
+                    <div class="synergy-card">
+                        <div class="fish-portrait"><img src="sprites/f_ghostfish.svg" alt="Ghostfish" /></div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Ghostfish</h5>
+                        <p class="font-monospace small mb-1" style="color: var(--c-sage);">Haunt</p>
+                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">+2 bonus Eggs per corpse floating in the tank at end-of-day scoring. More bones = more income.</p>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-md-flex">
+                    <div class="synergy-arrow"><iconify-icon icon="fa6-solid:arrow-right"></iconify-icon></div>
+                </div>
+                <div class="col-12 d-flex d-md-none justify-content-center">
+                    <div class="synergy-arrow synergy-arrow-mobile"><iconify-icon icon="fa6-solid:arrow-down"></iconify-icon></div>
+                </div>
+                <div class="col-md-3 col-sm-8">
+                    <div class="synergy-card">
+                        <div class="fish-portrait"><img src="sprites/f_worm.svg" alt="Zombie Worm" /></div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Zombie Worm</h5>
+                        <p class="font-monospace small mb-1" style="color: var(--c-sage);">Bone Eater</p>
+                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">Consumes a corpse on entry for instant +3 Eggs and +2 Shells. Cash out the carnage.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="font-monospace small" style="color: rgba(255,255,255,0.5);">30+ fish. 25+ unique traits. Hundreds of possible synergy chains.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Win Condition: The 30-Day Clock -->
+    <section class="win-condition-section section-pad">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="crown-icon-large mb-3">
+                        <iconify-icon icon="fa6-solid:crown"></iconify-icon>
+                        <iconify-icon icon="fa6-solid:crown"></iconify-icon>
+                        <iconify-icon icon="fa6-solid:crown"></iconify-icon>
+                    </div>
+                    <h2 class="display-5 fw-bold uppercase-tracking text-ink mb-3">A 30-Day Ticking Clock</h2>
+                    <p class="mb-4" style="max-width: 560px; margin: 0 auto; line-height: 1.7;">This is not an idle game. You have exactly <strong>30 days</strong> to build an economy capable of drafting and sustaining <strong>3 Crown Fish</strong> in the tank on the same day. Buy them too early, they dilute your deck. Buy them too late, your run is over.</p>
+                    <div class="day-counter mb-4">
+                        <iconify-icon icon="fa6-solid:hourglass-half"></iconify-icon>
+                        DAY 01 / 30
+                    </div>
+                    <p class="font-monospace mt-2 mb-2 uppercase-tracking" style="color: #7a5c1f;">Game Modes</p>
+                    <div class="scenario-pills">
+                        <span class="scenario-pill">Rogue-Sea</span>
+                        <span class="scenario-pill">Random-Draft</span>
+                        <span class="scenario-pill">Seeded-Swim</span>
+                        <span class="scenario-pill">Daily-Dive</span>
+                        <span class="scenario-pill">Challenge Scenarios</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fish Roster -->
+    <section id="roster" class="bg-retro-light section-pad border-top-ink border-bottom-ink">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold uppercase-tracking text-ink">The Fish Roster</h2>
+                <p class="text-secondary font-monospace">Every fish is a card in your deck. Here are a few of the 30+ you can draft.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Goldfish Card -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card-retro p-3 h-100 d-flex flex-column align-items-center text-center">
+                        <div class="mb-3" style="width: 84px; height: 84px;">
+                            <img src="sprites/f_goldfish.svg" alt="Goldfish" loading="lazy" style="width: 100%; height: 100%; filter: drop-shadow(2px 2px 0px var(--c-ink));" />
+                        </div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Goldfish</h5>
+                        <div class="font-monospace small bg-white border-ink rounded px-2 py-1 mb-2 w-100 text-center d-flex justify-content-center align-items-center gap-2">
+                            <span title="Eggs"><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 1</span> |
+                            <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 0</span> |
+                            <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> 0</span>
+                        </div>
+                        <p class="text-muted small mt-auto">Zero risk. Reliable +1 Egg every day.</p>
+                    </div>
+                </div>
+
+                <!-- Guppy Card -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card-retro p-3 h-100 d-flex flex-column align-items-center text-center">
+                        <div class="mb-3" style="width: 84px; height: 84px;">
+                            <img src="sprites/f_guppy.svg" alt="Guppy" loading="lazy" style="width: 100%; height: 100%; filter: drop-shadow(2px 2px 0px var(--c-ink));" />
+                        </div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Guppy</h5>
+                        <div class="font-monospace small bg-white border-ink rounded px-2 py-1 mb-2 w-100 text-center d-flex justify-content-center align-items-center gap-2">
+                            <span title="Eggs"><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 1</span> |
+                            <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 0</span> |
+                            <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> 1</span>
+                        </div>
+                        <p class="text-muted small mt-auto">Free card, but pollutes your tank.</p>
+                    </div>
+                </div>
+
+                <!-- Crab Card -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card-retro p-3 h-100 d-flex flex-column align-items-center text-center">
+                        <div class="mb-3" style="width: 84px; height: 84px;">
+                            <img src="sprites/f_crab.svg" alt="Crab" loading="lazy" style="width: 100%; height: 100%; filter: drop-shadow(2px 2px 0px var(--c-ink));" />
+                        </div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Crab</h5>
+                        <div class="font-monospace small bg-white border-ink rounded px-2 py-1 mb-2 w-100 text-center d-flex justify-content-center align-items-center gap-2">
+                            <span title="Eggs"><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 0</span> |
+                            <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 1</span> |
+                            <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> 0</span>
+                        </div>
+                        <p class="text-muted small mt-auto">Collects Shells to expand.</p>
+                    </div>
+                </div>
+
+        <!-- Sunfish Card -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="card-retro p-3 h-100 d-flex flex-column align-items-center text-center">
+                        <div class="mb-3" style="width: 84px; height: 84px;">
+                            <img src="sprites/f_sunfish.svg" alt="Sunfish" loading="lazy" style="width: 100%; height: 100%; filter: drop-shadow(2px 2px 0px var(--c-ink));" />
+                        </div>
+                        <h5 class="fw-bold uppercase-tracking mb-1 d-flex align-items-center justify-content-center gap-2">Sunfish <iconify-icon icon="fa6-solid:crown" class="mb-1 text-warning"></iconify-icon></h5>
+                        <div class="font-monospace small bg-white border-ink rounded px-2 py-1 mb-2 w-100 text-center d-flex justify-content-center align-items-center gap-2">
+                            <span title="Eggs"><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 0</span> |
+                            <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 0</span> |
+                            <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> ?</span>
+                        </div>
+                        <p class="text-muted small mt-auto">Crown Fish. Fickle RNG.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="https://github.com/jacobbates/finbred/blob/main/README.md#fish-roster" target="_blank" class="btn btn-lg btn-retro-secondary">View Full Roster</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="container section-pad">
+        <div class="text-center">
+            <h3 class="fw-bold uppercase-tracking text-ink mb-2">Ready to Draft?</h3>
+            <p class="text-secondary font-monospace mb-3">Build your deck. Break the meta. Beat the clock.</p>
+            <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg shadow-hard btn-cta-pulse" id="bottom-cta">Start a Run &gt;</a>
+        </div>
+    </section>
+
+    <!-- Changelog & Updates -->
+    <section id="changelog" class="container section-pad">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center mb-3">
+                    <h3 class="fw-bold uppercase-tracking text-ink m-0">Patch Notes</h3>
+                    <div class="ms-auto font-monospace small text-muted">system.update</div>
+                </div>
+                <div class="retro-terminal" id="terminal-output">
+                    <span class="terminal-cursor">_</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <noscript>
+        <div class="container text-center py-4">
+            <p class="text-muted font-monospace">JavaScript is required for navigation and patch notes.</p>
+        </div>
+    </noscript>
+
+    <footer class="bg-ink text-paper py-4 text-center mt-5 border-top-ink">
+        <div class="container font-monospace small">
+            <p class="mb-1">Finbred &copy; 2026 Jacob Bates</p>
+            <p class="text-secondary mb-2">A browser-based roguelite deck-builder.</p>
+            <p class="mb-0">
+                <a href="https://github.com/jacobbates/finbred" target="_blank" class="text-secondary me-3">GitHub</a>
+                <a href="https://github.com/jacobbates/finbred/blob/main/README.md" target="_blank" class="text-secondary">Player Guide</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Terminal Log Loader -->
+    <script>
+    (function () {
+        var terminal = document.getElementById("terminal-output");
+        if (!terminal) return;
+
+        fetch("terminal.md")
+            .then(function (res) { return res.text(); })
+            .then(function (md) {
+                var entries = md.split(/^## /m).filter(function (s) { return s.trim(); });
+                var html = "";
+
+                entries.forEach(function (entry) {
+                    var lines = entry.trim().split("\n");
+                    var header = lines[0];
+
+                    var vMatch = header.match(/^\[([^\]]+)\]\s*(.*)?$/);
+                    var version = vMatch ? vMatch[1] : header;
+                    var title = vMatch && vMatch[2] ? vMatch[2] : "";
+
+                    html += '<div class="mb-3">';
+                    html += '<strong class="text-warning">[' + version + ']</strong>';
+                    if (title) html += ' <em>' + title + '</em>';
+
+                    for (var i = 1; i < lines.length; i++) {
+                        var line = lines[i].trim();
+                        if (!line) continue;
+                        var content = line.replace(/^>\s*/, "");
+                        html += '<br>&gt; ' + content;
+                    }
+
+                    html += '</div>';
+                });
+
+                html += '<span class="terminal-cursor">_</span>';
+                terminal.innerHTML = html;
+            })
+            .catch(function () {
+                terminal.innerHTML = '<span class="text-danger">&gt; ERROR: Could not load terminal.md</span>';
+            });
+    })();
+
+    // Mobile nav: collapse first, THEN scroll (fixes sticky-navbar offset bug)
+    var navEl = document.getElementById("navbarContent");
+    if (navEl) {
+        navEl.querySelectorAll(".nav-link").forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                var target = this.getAttribute("href");
+                if (!target || target.charAt(0) !== "#") return;
+
+                var section = document.querySelector(target);
+                if (!section) return;
+
+                var bsCollapse = bootstrap.Collapse.getInstance(navEl);
+                if (bsCollapse && navEl.classList.contains("show")) {
+                    e.preventDefault();
+                    navEl.addEventListener("hidden.bs.collapse", function handler() {
+                        navEl.removeEventListener("hidden.bs.collapse", handler);
+                        section.scrollIntoView({ behavior: "smooth" });
+                    });
+                    bsCollapse.hide();
+                }
+            });
+        });
+    }
+    </script>
+</body>
+</html>
