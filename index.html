@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finbred | Roguelike Deck-Builder with fish</title>
-    <meta name="description" content="Finbred is a browser-based roguelike deck-builder. Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30." />
+    <meta name="description" content="Finbred is a free browser-based roguelike deck-builder. Draft fish, incubate mutant monstrosities, build combos, and collect 3 Crown Fish before Day 30." />
     <meta name="robots" content="index, follow" />
 
     <!-- Favicon -->
@@ -23,13 +23,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://finbred.io/" />
     <meta property="og:title" content="Finbred - Roguelike Deck-Builder in a Fish Tank" />
-    <meta property="og:description" content="Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30 or they all die" />
+    <meta property="og:description" content="Draft fish. Build combos. Push your luck. Incubate monstrosities. Collect 3 Crown Fish before Day 30 or they all die." />
     <meta property="og:image" content="https://finbred.io/icons/og-image.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Finbred - Roguelike Deck-Builder in a Fish Tank" />
-    <meta name="twitter:description" content="Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30 or they all die." />
+    <meta name="twitter:description" content="Draft fish. Build combos. Push your luck. Incubate monstrosities. Collect 3 Crown Fish before Day 30 or they all die." />
     <meta name="twitter:image" content="https://finbred.io/icons/og-image.png" />
 
     <!-- Structured Data -->
@@ -39,8 +39,8 @@
         "@type": "VideoGame",
         "name": "Finbred",
         "url": "https://finbred.io/",
-        "description": "A browser-based deck-builder. Draft fish, build combos, and survive ammonia crashes to collect 3 Crown Fish before Day 30.",
-        "genre": ["Roguelike", "Deck-builder", "Strategy"],
+        "description": "A browser-based roguelike deck-builder. Draft fish, incubate mutant monstrosities, build combos, and survive ammonia crashes to collect 3 Crown Fish before Day 30.",
+        "genre": ["Roguelike", "Deck-builder", "Strategy", "Mutation"],
         "gamePlatform": "Web browser",
         "applicationCategory": "Game",
         "operatingSystem": "Any",
@@ -97,6 +97,14 @@
                 },
                 {
                     "@type": "Question",
+                    "name": "What is the Incubator in Finbred?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The Incubator is a mutation mechanic in the Hatchery. You select two parent fish from your Ocean deck to produce a Finbred - a mutant offspring that can inherit traits, roll new yields, and gain a unique visual appearance. Splice different species for a chance at dual-trait combos or same species for boosted yields, but every mutation risks ammonia penalties."
+                    }
+                },
+                {
+                    "@type": "Question",
                     "name": "Can I play Finbred on mobile?",
                     "acceptedAnswer": {
                         "@type": "Answer",
@@ -137,6 +145,9 @@
                         <a href="#synergies" class="nav-link text-white fw-bold uppercase-tracking">Synergies</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#incubator" class="nav-link text-white fw-bold uppercase-tracking">Incubator</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#roster" class="nav-link text-white fw-bold uppercase-tracking">Roster</a>
                     </li>
                     <li class="nav-item">
@@ -175,7 +186,7 @@
         <div class="hero-content d-flex flex-column align-items-center justify-content-center h-100">
             <h1 class="display-3 fw-bold text-white mb-2 uppercase-tracking" style="letter-spacing: 2px;">FINBRED</h1>
             <p class="h4 text-paper mb-3 font-monospace" style="max-width: 640px; line-height: 1.5;">A Deck-Builder with fish.</p>
-            <p class="text-paper mb-4 font-monospace" style="max-width: 580px; line-height: 1.5; opacity: 0.85;">Draft fish. Build combos. Push your luck. Collect 3 Crown Fish before Day 30 or they all die.</p>
+            <p class="text-paper mb-4 font-monospace" style="max-width: 580px; line-height: 1.5; opacity: 0.85;">Draft fish. Build combos. Incubate monstrosities. Push your luck. Collect 3 Crown Fish before Day 30 or they all die.</p>
             <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg shadow-hard mt-1 btn-cta-pulse" id="hero-cta">Start a Run &gt;</a>
         </div>
     </section>
@@ -184,31 +195,39 @@
     <section class="container section-pad" id="mechanics">
         <div class="text-center mb-4">
             <h2 class="display-5 fw-bold uppercase-tracking text-ink">The Core Loop</h2>
-            <p class="text-secondary font-monospace">Every run is a 30-day economy puzzle.</p>
+            <p class="text-secondary font-monospace">Four systems. One 30-day deadline.</p>
         </div>
         <div class="row g-4 text-center">
             <!-- Pillar 1: Draft -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card-retro feature-card">
                     <div class="feature-icon text-celadon"><iconify-icon icon="fa6-solid:layer-group" width="28" height="28"></iconify-icon></div>
                     <h3 class="fw-bold uppercase-tracking">Draft</h3>
-                    <p class="text-secondary">Every fish you buy is a card added to your permanent Ocean deck. Targeted drafting and deck-thinning are critical - a bloated deck dilutes your best draws.</p>
+                    <p class="text-secondary">Every fish you buy or splice is a permanent card in your Ocean. Draft smart, thin the fat, or drown in your own decisions. A bloated deck kills runs.</p>
                 </div>
             </div>
             <!-- Pillar 2: Survive -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card-retro feature-card">
                     <div class="feature-icon text-danger"><iconify-icon icon="fa6-solid:biohazard" width="28" height="28"></iconify-icon></div>
                     <h3 class="fw-bold uppercase-tracking">Survive</h3>
-                    <p class="text-secondary">Ammonia is your run-killer. High-yield fish pollute the water. Hit 3.0 ammonia and the tank crashes - zero income that day. Pure push-your-luck tension every draw.</p>
+                    <p class="text-secondary">Pollution is a run-killer. Hit 3/3 ammonia and the tank crashes - zero income that day. Every draw is tension between greed and survival.</p>
                 </div>
             </div>
             <!-- Pillar 3: Scale -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-3">
                 <div class="card-retro feature-card">
                     <div class="feature-icon text-orange"><iconify-icon icon="fa6-solid:chart-line" width="28" height="28"></iconify-icon></div>
                     <h3 class="fw-bold uppercase-tracking">Scale</h3>
-                    <p class="text-secondary">Eggs buy fish. Shells expand your tank. Crown Fish cost 30-40 Eggs each - you need to build an economy engine that scales fast enough to afford three before Day 30.</p>
+                    <p class="text-secondary">Eggs buy fish. Shells expand your tank. Crown Fish aren't cheap. Build an engine that scales fast, or watch the clock run out.</p>
+                </div>
+            </div>
+            <!-- Pillar 4: Incubate -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card-retro feature-card">
+                    <div class="feature-icon text-celadon"><iconify-icon icon="game-icons:dna1" width="28" height="28"></iconify-icon></div>
+                    <h3 class="fw-bold uppercase-tracking">Incubate</h3>
+                    <p class="text-secondary">Splice fish to create Finbreds. Results are unpredictable - rolled yields, grafted traits, and fused colors. Every mutation risks ammonia. Embrace or Flush your monstrosities.</p>
                 </div>
             </div>
         </div>
@@ -221,7 +240,7 @@
             <div class="col-md-10">
                 <div class="text-center mb-4">
                     <h2 class="display-5 fw-bold uppercase-tracking text-ink">How a Run Works</h2>
-                    <p class="text-secondary font-monospace">Three phases. Every single day. For 30 days.</p>
+                    <p class="text-secondary font-monospace">Three phases. Every day. 30 days. No shortcuts.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4">
@@ -230,7 +249,7 @@
                                 <div class="step-number">1</div>
                                 <h4 class="fw-bold uppercase-tracking mb-0">Draw</h4>
                             </div>
-                            <p class="text-secondary small mb-0">Draw fish one-by-one from your shuffled Ocean deck into the tank. Every draw is a gamble - you might pull a Shell-generating Crab, or an ammonia-producing Guppy that pushes you closer to a crash.</p>
+                            <p class="text-secondary small mb-0">Draw fish one-by-one from your Ocean into the tank. Maybe it'll be a helpful Pleco. Maybe a Guppy destroys your tank. Push your luck or stop and lock in.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -239,16 +258,16 @@
                                 <div class="step-number">2</div>
                                 <h4 class="fw-bold uppercase-tracking mb-0">Score</h4>
                             </div>
-                            <p class="text-secondary small mb-0">End the day to trigger scoring. Every fish in the tank produces <iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> Eggs and <iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> Shells plus any trait bonuses. Crashed tanks earn nothing.</p>
+                            <p class="text-secondary small mb-0">End the day to trigger scoring. Every fish in the tank produces <iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> Eggs and <iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> Shells. Trait bonuses stack. Crashed tanks earn nothing.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card-retro p-3 h-100">
                             <div class="d-flex align-items-center gap-3 mb-2">
                                 <div class="step-number">3</div>
-                                <h4 class="fw-bold uppercase-tracking mb-0">Shop</h4>
+                                <h4 class="fw-bold uppercase-tracking mb-0">Hatch</h4>
                             </div>
-                            <p class="text-secondary small mb-0">The Hatchery opens. Spend Eggs to draft new fish into your permanent deck. Spend Shells to expand tank capacity. Every purchase shapes the rest of your run.</p>
+                            <p class="text-secondary small mb-0">The Hatchery opens. Spend Eggs to draft fish. Spend Shells to expand. Mutate a Finbred in the Incubator. Every choice is permanent.</p>
                         </div>
                     </div>
                 </div>
@@ -263,15 +282,15 @@
             <div class="text-center mb-2">
                 <span class="combo-label mb-3 d-inline-block">Chain Combos!</span>
                 <h2 class="display-5 fw-bold uppercase-tracking text-paper">The Corpse Economy</h2>
-                <p class="font-monospace mb-4" style="color: var(--c-sage); max-width: 600px; margin: 0 auto;">Some of the best synergies in Finbred are built on death. Here is one of many "broken" combos waiting to be discovered.</p>
+                <p class="font-monospace mb-4" style="color: var(--c-sage); max-width: 600px; margin: 0 auto;">Some fish eat fish. Some fish profit from carnage. Stack the right roster and watch chain reactions cause havoc.</p>
             </div>
             <div class="row align-items-center justify-content-center g-3">
                 <div class="col-md-3 col-sm-8">
                     <div class="synergy-card">
                         <div class="fish-portrait"><img src="sprites/f_flatfish.svg" alt="Flatfish" /></div>
                         <h5 class="fw-bold uppercase-tracking mb-1">Flatfish</h5>
-                        <p class="font-monospace small mb-1" style="color: var(--c-sage);">Eat Random</p>
-                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">Devours a random fish on entry, leaving behind a corpse. +5 Shells from the kill.</p>
+                        <p class="font-monospace small mb-1" style="color: var(--c-sage);">Predator</p>
+                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">Devours a random fish on entry. Leaves a corpse. Earns you +5 Shells for the trouble.</p>
                     </div>
                 </div>
                 <div class="col-auto d-none d-md-flex">
@@ -285,7 +304,7 @@
                         <div class="fish-portrait"><img src="sprites/f_ghostfish.svg" alt="Ghostfish" /></div>
                         <h5 class="fw-bold uppercase-tracking mb-1">Ghostfish</h5>
                         <p class="font-monospace small mb-1" style="color: var(--c-sage);">Haunt</p>
-                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">+2 bonus Eggs per corpse floating in the tank at end-of-day scoring. More bones = more income.</p>
+                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">+2 Eggs per corpse in the tank at end-of-day. More bones, more income.</p>
                     </div>
                 </div>
                 <div class="col-auto d-none d-md-flex">
@@ -299,12 +318,87 @@
                         <div class="fish-portrait"><img src="sprites/f_worm.svg" alt="Zombie Worm" /></div>
                         <h5 class="fw-bold uppercase-tracking mb-1">Zombie Worm</h5>
                         <p class="font-monospace small mb-1" style="color: var(--c-sage);">Bone Eater</p>
-                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">Consumes a corpse on entry for instant +3 Eggs and +2 Shells. Cash out the carnage.</p>
+                        <p class="small mb-0" style="color: rgba(255,255,255,0.6);">Consumes a corpse on entry. +3 Eggs, +2 Shells. An instant payout from a previous casualty.</p>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4">
-                <p class="font-monospace small" style="color: rgba(255,255,255,0.5);">30+ fish. 25+ unique traits. Hundreds of possible synergy chains.</p>
+                <p class="font-monospace small" style="color: rgba(255,255,255,0.5);">50+ fish. 25+ traits. Hundreds of synergies and combo chains to discover.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Incubator Showcase -->
+    <section id="incubator" class="incubator-section section-pad">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="text-center mb-2">
+                <span class="combo-label mb-3 d-inline-block">Splice &amp; Mutate!</span>
+                <h2 class="display-5 fw-bold uppercase-tracking text-paper">The Incubator</h2>
+                <p class="font-monospace mb-4" style="color: var(--c-sage); max-width: 620px; margin: 0 auto;">Splice any two fish from your deck for Finbred. What comes out is unpredictable. Rolled yields. Trait inheritance. Mutated appearances. One incubation per day. Choose wisely.</p>
+            </div>
+            <div class="row align-items-center justify-content-center g-3">
+                <!-- Parent A -->
+                <div class="col-md-3 col-sm-8">
+                    <div class="synergy-card incubator-card">
+                        <div class="incubator-label incubator-label-finbred font-monospace">Parent A</div>
+                        <div class="fish-portrait"><img src="sprites/f_piranha.svg" alt="Piranha" /></div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Piranha</h5>
+                        <div class="incubator-traits"><span class="incubator-trait-pill">Shred</span></div>
+                        <div class="incubator-stats font-monospace">
+                            <span><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 2</span>
+                            <span><iconify-icon icon="fa6-solid:biohazard" style="color: var(--c-sage);"></iconify-icon> 0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plus sign -->
+                <div class="col-auto d-none d-md-flex">
+                    <div class="synergy-arrow"><iconify-icon icon="fa6-solid:plus"></iconify-icon></div>
+                </div>
+                <div class="col-12 d-flex d-md-none justify-content-center">
+                    <div class="synergy-arrow synergy-arrow-mobile"><iconify-icon icon="fa6-solid:plus"></iconify-icon></div>
+                </div>
+                <!-- Parent B -->
+                <div class="col-md-3 col-sm-8">
+                    <div class="synergy-card incubator-card">
+                        <div class="incubator-label incubator-label-finbred font-monospace">Parent B</div>
+                        <div class="fish-portrait"><img src="sprites/f_narwhal.svg" alt="Narwhal" /></div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Narwhal</h5>
+                        <div class="incubator-traits">
+                            <span class="incubator-trait-pill">Impaler</span>
+                            <span class="incubator-trait-pill">Ivory</span>
+                        </div>
+                        <div class="incubator-stats font-monospace">
+                            <span><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 3</span>
+                            <span><iconify-icon icon="fa6-solid:biohazard" style="color: var(--c-sage);"></iconify-icon> 1</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equals sign -->
+                <div class="col-auto d-none d-md-flex">
+                    <div class="synergy-arrow"><iconify-icon icon="fa6-solid:equals"></iconify-icon></div>
+                </div>
+                <div class="col-12 d-flex d-md-none justify-content-center">
+                    <div class="synergy-arrow synergy-arrow-mobile"><iconify-icon icon="fa6-solid:arrow-down"></iconify-icon></div>
+                </div>
+                <!-- Offspring -->
+                <div class="col-md-3 col-sm-8">
+                    <div class="synergy-card incubator-card incubator-offspring">
+                        <div class="incubator-label incubator-label-finbred font-monospace">Finbred!</div>
+                        <div class="fish-portrait incubator-offspring-portrait"><img src="sprites/f_piranha.svg" alt="Finbred Piranha" style="filter: hue-rotate(180deg) drop-shadow(0 0 8px rgba(172,225,175,0.3));" /></div>
+                        <h5 class="fw-bold uppercase-tracking mb-1">Piranha <iconify-icon icon="game-icons:dna1" style="color: var(--c-sage);"></iconify-icon></h5>
+                        <div class="incubator-traits">
+                            <span class="incubator-trait-pill">Shred</span>
+                            <span class="incubator-trait-pill">Impaler</span>
+                        </div>
+                        <div class="incubator-stats font-monospace">
+                            <span><iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> 5</span>
+                            <span><iconify-icon icon="fa6-solid:biohazard" style="color: var(--c-sage);"></iconify-icon> 1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="font-monospace small" style="color: rgba(255,255,255,0.5);">Splice species for dual-trait combos or boosted yields. Just don't ask what happens to the ammonia.</p>
             </div>
         </div>
     </section>
@@ -320,7 +414,7 @@
                         <iconify-icon icon="fa6-solid:crown"></iconify-icon>
                     </div>
                     <h2 class="display-5 fw-bold uppercase-tracking text-ink mb-3">A 30-Day Ticking Clock</h2>
-                    <p class="mb-4" style="max-width: 560px; margin: 0 auto; line-height: 1.7;">This is not an idle game. You have exactly <strong>30 days</strong> to build an economy capable of drafting and sustaining <strong>3 Crown Fish</strong> in the tank on the same day. Buy them too early, they dilute your deck. Buy them too late, your run is over.</p>
+                    <p class="mb-4" style="max-width: 560px; margin: 0 auto; line-height: 1.7;">This is not an idle game. You have exactly <strong>30 days</strong> to build an economy that can sustain <strong>3 Crown Fish</strong> in the tank on the same day. Buy too early and they dilute your deck. Buy too late and your run might be dead.</p>
                     <div class="day-counter mb-4">
                         <iconify-icon icon="fa6-solid:hourglass-half"></iconify-icon>
                         DAY 01 / 30
@@ -343,7 +437,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold uppercase-tracking text-ink">The Fish Roster</h2>
-                <p class="text-secondary font-monospace">Every fish is a card in your deck. Here are a few of the 30+ you can draft.</p>
+                <p class="text-secondary font-monospace">Every fish is a card in your ocean deck. Here's some specimens from 50+ species in the game.</p>
             </div>
 
             <div class="row g-4">
@@ -359,7 +453,7 @@
                             <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 0</span> |
                             <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> 0</span>
                         </div>
-                        <p class="text-muted small mt-auto">Zero risk. Reliable +1 Egg every day.</p>
+                        <p class="text-muted small mt-auto">No risk. No drama. A reliable +1 Egg.</p>
                     </div>
                 </div>
 
@@ -375,7 +469,7 @@
                             <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 0</span> |
                             <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> 1</span>
                         </div>
-                        <p class="text-muted small mt-auto">Free card, but pollutes your tank.</p>
+                        <p class="text-muted small mt-auto">Free to draft but pollutes the tank. Your call.</p>
                     </div>
                 </div>
 
@@ -391,7 +485,7 @@
                             <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 1</span> |
                             <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> 0</span>
                         </div>
-                        <p class="text-muted small mt-auto">Collects Shells to expand.</p>
+                        <p class="text-muted small mt-auto">Clean. Quiet. Digs up Shells.</p>
                     </div>
                 </div>
 
@@ -407,7 +501,7 @@
                             <span title="Shells"><iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> 0</span> |
                             <span title="Ammonia"><iconify-icon icon="fa6-solid:biohazard" class="text-success"></iconify-icon> ?</span>
                         </div>
-                        <p class="text-muted small mt-auto">Crown Fish. Fickle RNG.</p>
+                        <p class="text-muted small mt-auto">A crown specimen with fickle ammonia RNG.</p>
                     </div>
                 </div>
             </div>
@@ -422,7 +516,7 @@
     <section class="container section-pad">
         <div class="text-center">
             <h3 class="fw-bold uppercase-tracking text-ink mb-2">Ready to Draft?</h3>
-            <p class="text-secondary font-monospace mb-3">Build your deck. Break the meta. Beat the clock.</p>
+            <p class="text-secondary font-monospace mb-3">Build your deck. Break the meta. Incubate monstrosities.</p>
             <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg shadow-hard btn-cta-pulse" id="bottom-cta">Start a Run &gt;</a>
         </div>
     </section>

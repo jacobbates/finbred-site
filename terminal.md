@@ -1,3 +1,7 @@
+## [v30.5.0] Finbreds!
+
+> Incubator added to the Hatchery. Mutate monstrosities!
+
 ## [v30.0.0] Rogue-balance
 
 > Tweaked shop pool variety.
