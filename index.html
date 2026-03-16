@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finbred | Roguelike Deck-Builder with fish</title>
+    <title>Finbred | A Roguelike Deck-Builder with fish</title>
     <meta name="description" content="Finbred is a free browser-based roguelike deck-builder. Draft fish, incubate mutant monstrosities, build combos, and collect 3 Crown Fish before Day 30." />
     <meta name="robots" content="index, follow" />
 
@@ -92,7 +92,7 @@
                     "name": "What game modes does Finbred have?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Finbred includes multiple game modes: Rogue-Sea (full roguelike), Random-Draft (randomized pool), Seeded-Swim (reproducible runs via seed codes), Daily-Dive (shared daily seed), and Challenge Scenarios with unique rule modifiers."
+                        "text": "Finbred includes multiple game modes: Rogue-Sea (full roguelike), Draft-Pool (fixed hatchery pool), Seeded-Swim (reproducible runs via seed codes), Daily-Dive (shared daily seed), and Exotic-Reef (challenge scenarios with unique rule modifiers)."
                     }
                 },
                 {
@@ -184,7 +184,7 @@
             <h1 class="display-3 fw-bold text-white mb-2 uppercase-tracking" style="letter-spacing: 2px;">FINBRED</h1>
             <p class="h4 text-paper mb-3 font-monospace" style="max-width: 640px; line-height: 1.5;">A Deck-Builder with fish.</p>
             <p class="text-paper mb-4 font-monospace" style="max-width: 580px; line-height: 1.5; opacity: 0.85;">Draft fish. Build combos. Incubate monstrosities. Push your luck. Collect 3 Crown Fish before Day 30 or they all die.</p>
-            <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg shadow-hard mt-1 btn-cta-pulse" id="hero-cta">Start a Run &gt;</a>
+            <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg mt-1 text-white btn-cta-pulse" id="hero-cta">Start a Run &gt;</a>
         </div>
     </section>
 
@@ -216,7 +216,7 @@
                 <div class="card-retro feature-card">
                     <div class="feature-icon text-orange"><iconify-icon icon="fa6-solid:chart-line" width="28" height="28"></iconify-icon></div>
                     <h3 class="fw-bold uppercase-tracking">Scale</h3>
-                    <p class="text-secondary">Eggs buy fish. Shells expand your tank. Crown Fish aren't cheap. Build an engine that scales fast, or watch the clock run out.</p>
+                    <p class="text-secondary">Eggs buy fish. Shells expand your tank. Crown Fish aren't cheap. Build an engine that scales fast, or time runs out and your fish become corpses.</p>
                 </div>
             </div>
             <!-- Pillar 4: Incubate -->
@@ -224,7 +224,7 @@
                 <div class="card-retro feature-card">
                     <div class="feature-icon text-celadon"><iconify-icon icon="game-icons:dna1" width="28" height="28"></iconify-icon></div>
                     <h3 class="fw-bold uppercase-tracking">Incubate</h3>
-                    <p class="text-secondary">Splice fish to create Finbreds. Results are unpredictable - rolled yields, grafted traits, and fused colors. Every mutation risks ammonia. Embrace or Flush your monstrosities.</p>
+                    <p class="text-secondary">Splice fish to create <strong>Finbreds</strong> with unpredictable results. Inherit yields, traits, and colors. Embrace or Flush your monstrosities.</p>
                 </div>
             </div>
         </div>
@@ -237,33 +237,27 @@
             <div class="col-md-10">
                 <div class="text-center mb-4">
                     <h2 class="display-5 fw-bold uppercase-tracking text-ink">How a Run Works</h2>
-                    <p class="text-secondary font-monospace">Three phases. Every day. 30 days. No shortcuts.</p>
+                    <p class="text-secondary font-monospace mt-2 pb-4">Three phases. Every day. 30 days. No shortcuts.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card-retro p-3 h-100">
-                            <div class="d-flex align-items-center gap-3 mb-2">
-                                <div class="step-number">1</div>
-                                <h4 class="fw-bold uppercase-tracking mb-0">Draw</h4>
-                            </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card-retro p-3 pt-5 h-100 text-center">
+                            <div class="step-number">1</div>
+                            <h5 class="fw-bold uppercase-tracking mt-2 mb-2">Draw</h5>
                             <p class="text-secondary small mb-0">Draw fish one-by-one from your Ocean into the tank. Maybe it'll be a helpful Pleco. Maybe a Guppy destroys your tank. Push your luck or stop and lock in.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card-retro p-3 h-100">
-                            <div class="d-flex align-items-center gap-3 mb-2">
-                                <div class="step-number">2</div>
-                                <h4 class="fw-bold uppercase-tracking mb-0">Score</h4>
-                            </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card-retro p-3 pt-5 h-100 text-center">
+                            <div class="step-number">2</div>
+                            <h5 class="fw-bold uppercase-tracking mt-2 mb-2">Score</h5>
                             <p class="text-secondary small mb-0">End the day to trigger scoring. Every fish in the tank produces <iconify-icon icon="fa6-solid:egg" class="text-orange"></iconify-icon> Eggs and <iconify-icon icon="streamline:shell-remix" class="text-secondary"></iconify-icon> Shells. Trait bonuses stack. Crashed tanks earn nothing.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card-retro p-3 h-100">
-                            <div class="d-flex align-items-center gap-3 mb-2">
-                                <div class="step-number">3</div>
-                                <h4 class="fw-bold uppercase-tracking mb-0">Hatch</h4>
-                            </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="card-retro p-3 pt-5 h-100 text-center">
+                            <div class="step-number">3</div>
+                            <h5 class="fw-bold uppercase-tracking mb-2">Hatch</h5>
                             <p class="text-secondary small mb-0">The Hatchery opens. Spend Eggs to draft fish. Spend Shells to expand. Mutate a Finbred in the Incubator. Every choice is permanent.</p>
                         </div>
                     </div>
@@ -418,11 +412,11 @@
                     </div>
                     <p class="font-monospace mt-2 mb-2 uppercase-tracking" style="color: #7a5c1f;">Game Modes</p>
                     <div class="scenario-pills">
-                        <span class="scenario-pill">Rogue-Sea</span>
-                        <span class="scenario-pill">Random-Draft</span>
-                        <span class="scenario-pill">Seeded-Swim</span>
                         <span class="scenario-pill">Daily-Dive</span>
-                        <span class="scenario-pill">Challenge Scenarios</span>
+                        <span class="scenario-pill">Rogue-Sea</span>
+                        <span class="scenario-pill">Draft-Pool</span>
+                        <span class="scenario-pill">Seeded-Swim</span>
+                        <span class="scenario-pill">Exotic-Reef</span>
                     </div>
                 </div>
             </div>
@@ -564,7 +558,7 @@
         <div class="text-center">
             <h3 class="fw-bold uppercase-tracking text-ink mb-2">Ready to Draft?</h3>
             <p class="text-secondary font-monospace mb-3">Build your deck. Break the meta. Incubate monstrosities.</p>
-            <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg shadow-hard btn-cta-pulse" id="bottom-cta">Start a Run &gt;</a>
+            <a href="https://finbred.fish" class="btn btn-retro-primary btn-lg btn-cta-pulse" id="bottom-cta">Start a Run &gt;</a>
         </div>
     </section>
 
